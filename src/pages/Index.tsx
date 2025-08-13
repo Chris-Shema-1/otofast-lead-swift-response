@@ -1,12 +1,39 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import { HeroSection } from "@/components/HeroSection";
+import { ProblemSection } from "@/components/ProblemSection";
+import { StorySection } from "@/components/StorySection";
+import { ServicesSection } from "@/components/ServicesSection";
+import { CTASection } from "@/components/CTASection";
+import { LeadForm } from "@/components/LeadForm";
 
 const Index = () => {
+  const [showForm, setShowForm] = useState(false);
+
+  const scrollToForm = () => {
+    setShowForm(true);
+    setTimeout(() => {
+      const formElement = document.getElementById('lead-form');
+      if (formElement) {
+        formElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }, 100);
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <HeroSection onGetStarted={scrollToForm} />
+      <ProblemSection />
+      <StorySection onGetStarted={scrollToForm} />
+      <ServicesSection />
+      <CTASection onGetStarted={scrollToForm} />
+      
+      {showForm && (
+        <section id="lead-form" className="py-20 bg-secondary">
+          <div className="container mx-auto px-4">
+            <LeadForm />
+          </div>
+        </section>
+      )}
     </div>
   );
 };
