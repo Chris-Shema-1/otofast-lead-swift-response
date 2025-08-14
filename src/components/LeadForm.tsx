@@ -38,7 +38,7 @@ export const LeadForm = () => {
         source: "lead-form"
       };
 
-      const webhookUrl = "https://n8n-b19k.onrender.com/webhook/7b3ca633-814c-474b-8828-57d82ce5784d";
+      const webhookUrl = "https://n8n-b19k.onrender.com/webhook-test/7b3ca633-814c-474b-8828-57d82ce5784d";
       
       const response = await fetch(webhookUrl, {
         method: "POST",
