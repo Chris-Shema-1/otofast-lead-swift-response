@@ -150,11 +150,11 @@ export const LeadForm = () => {
                 <SelectValue placeholder="Select your budget range" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="0-500">$0 - $500</SelectItem>
-                <SelectItem value="500-1000">$500 - $1,000</SelectItem>
-                <SelectItem value="1000-2000">$1,000 - $2,000</SelectItem>
-                <SelectItem value="2000-5000">$2,000 - $5,000</SelectItem>
-                <SelectItem value="5000+">$5,000+</SelectItem>
+                <SelectItem value="0 500">$0 - $500</SelectItem>
+                <SelectItem value="500 1000">$500 - $1,000</SelectItem>
+                <SelectItem value="1000 2000">$1,000 - $2,000</SelectItem>
+                <SelectItem value="2000 5000">$2,000 - $5,000</SelectItem>
+                <SelectItem value="5000">$5,000+</SelectItem>
               </SelectContent>
             </Select>
           </div>
