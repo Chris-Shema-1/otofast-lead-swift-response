@@ -38,8 +38,7 @@ export const LeadForm = () => {
         source: "lead-form"
       };
 
-      // TODO: Replace with your actual n8n webhook URL
-      const webhookUrl = "YOUR_N8N_WEBHOOK_URL_HERE";
+      const webhookUrl = "https://n8n-b19k.onrender.com/webhook/b4123a31-6e91-4341-85f8-09234038b947";
       
       const response = await fetch(webhookUrl, {
         method: "POST",
