@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Navigation } from "@/components/Navigation";
 import { HeroSection } from "@/components/HeroSection";
 import { ProblemSection } from "@/components/ProblemSection";
 import { StorySection } from "@/components/StorySection";
@@ -21,6 +22,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Navigation onGetStarted={scrollToForm} />
       <HeroSection onGetStarted={scrollToForm} />
       <ProblemSection />
       <StorySection onGetStarted={scrollToForm} />

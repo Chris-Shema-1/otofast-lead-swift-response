@@ -7,10 +7,10 @@ interface HeroSectionProps {
 
 export const HeroSection = ({ onGetStarted }: HeroSectionProps) => {
   return (
-    <section className="relative bg-gradient-to-br from-turquoise-500 to-turquoise-600 text-white py-20 lg:py-32 overflow-hidden">
-      <div className="absolute inset-0 bg-black/5"></div>
-      <div className="absolute top-20 right-10 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-20 left-10 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
+    <section id="hero" className="relative bg-white text-foreground py-20 lg:py-32 pt-32 overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-turquoise-50 to-white"></div>
+      <div className="absolute top-20 right-10 w-64 h-64 bg-turquoise-100/30 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-20 left-10 w-96 h-96 bg-turquoise-100/20 rounded-full blur-3xl"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -23,27 +23,26 @@ export const HeroSection = ({ onGetStarted }: HeroSectionProps) => {
               />
             </div>
             
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
-              Never Let Another Lead Go <span className="text-turquoise-100">Cold</span> Again
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight text-foreground">
+              Never Let Another Lead Go <span className="text-primary">Cold</span> Again
             </h1>
             
-            <p className="text-xl lg:text-2xl mb-8 text-turquoise-100">
+            <p className="text-xl lg:text-2xl mb-8 text-muted-foreground">
               We make sure every new lead gets a personal reply in under 60 seconds — 24/7. 
               Turn your cold leads into closed deals automatically.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 lg:justify-start justify-center mb-8">
               <Button 
-                size="lg" 
-                variant="secondary"
+                size="lg"
                 onClick={onGetStarted}
-                className="bg-white text-turquoise-600 hover:bg-turquoise-50 px-8 py-4 text-lg font-semibold button-glow hover:scale-105 transition-transform duration-300"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 text-lg font-semibold button-glow hover:scale-105 transition-transform duration-300"
               >
                 Get My Free Setup Now
               </Button>
             </div>
             
-            <p className="text-turquoise-100 text-sm mb-8">
+            <p className="text-muted-foreground text-sm mb-8">
               ✓ Free setup • ✓ 5+ qualified leads guaranteed in 30 days
             </p>
           </div>
@@ -56,11 +55,11 @@ export const HeroSection = ({ onGetStarted }: HeroSectionProps) => {
                 alt="Professional real estate agent managing leads efficiently"
                 className="rounded-2xl shadow-elevated w-full h-auto mb-6"
               />
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 glow-turquoise">
-                <h3 className="text-2xl font-bold mb-4">Our Guarantee</h3>
-                <p className="text-lg text-turquoise-100">
+              <div className="bg-primary/5 backdrop-blur-sm rounded-2xl p-8 border border-primary/20 glow-turquoise">
+                <h3 className="text-2xl font-bold mb-4 text-foreground">Our Guarantee</h3>
+                <p className="text-lg text-muted-foreground">
                   We'll set up your system for free. If it doesn't get you at least 5 new qualified leads in 30 days, 
-                  <strong className="text-white"> you owe us nothing.</strong>
+                  <strong className="text-primary"> you owe us nothing.</strong>
                 </p>
               </div>
             </div>
