@@ -22,7 +22,7 @@ export const StorySection = ({ onGetStarted }: StorySectionProps) => {
           
           <div className="grid lg:grid-cols-2 gap-8 items-center mb-12">
             <div className="space-y-6">
-              <Card className="bg-turquoise-50 border-turquoise-200">
+              <Card className="bg-turquoise-50 border-turquoise-200 card-hover shadow-[0_4px_12px_-4px_hsl(var(--turquoise-500)_/_0.15)]">
                 <CardContent className="p-6">
                   <div className="flex items-center space-x-3 mb-3">
                     <Calculator className="h-6 w-6 text-turquoise-600" />
@@ -36,7 +36,7 @@ export const StorySection = ({ onGetStarted }: StorySectionProps) => {
                 </CardContent>
               </Card>
               
-              <Card className="bg-red-50 border-red-200">
+              <Card className="bg-red-50 border-red-200 card-hover shadow-[0_4px_12px_-4px_hsl(348_83%_47%_/_0.15)]">
                 <CardContent className="p-6">
                   <div className="flex items-center space-x-3 mb-3">
                     <MessageCircle className="h-6 w-6 text-red-600" />
@@ -52,12 +52,12 @@ export const StorySection = ({ onGetStarted }: StorySectionProps) => {
             </div>
             
             <div className="text-center lg:text-left">
-              <div className="bg-gradient-to-br from-turquoise-500 to-turquoise-600 text-white p-8 rounded-2xl">
+              <div className="bg-gradient-to-br from-turquoise-500 to-turquoise-600 text-white p-8 rounded-2xl shadow-elevated glow-turquoise card-hover">
                 <Users className="h-12 w-12 mb-4 mx-auto lg:mx-0" />
                 <h3 className="text-2xl font-bold mb-4">What If We Could Rescue Just 5 of Those Leads?</h3>
                 <div className="text-3xl font-bold mb-2">+$10,000</div>
                 <p className="text-turquoise-100 mb-6">Additional monthly revenue from just 5 more closed deals</p>
-                <div className="bg-white/20 p-4 rounded-lg">
+                <div className="bg-white/20 p-4 rounded-lg backdrop-blur-sm">
                   <p className="text-sm">8 total clients × $2,000 = <strong>$16,000/month</strong></p>
                   <p className="text-turquoise-100 text-xs mt-1">That's $192,000 per year!</p>
                 </div>
@@ -65,7 +65,7 @@ export const StorySection = ({ onGetStarted }: StorySectionProps) => {
             </div>
           </div>
           
-          <Card className="bg-primary text-primary-foreground">
+          <Card className="bg-primary text-primary-foreground shadow-elevated card-hover">
             <CardContent className="p-8 text-center">
               <TrendingUp className="h-12 w-12 mx-auto mb-4" />
               <h3 className="text-2xl font-bold mb-4">
@@ -80,7 +80,7 @@ export const StorySection = ({ onGetStarted }: StorySectionProps) => {
                 size="lg" 
                 variant="secondary"
                 onClick={onGetStarted}
-                className="bg-white text-primary hover:bg-primary-foreground/90"
+                className="bg-white text-primary hover:bg-primary-foreground/90 button-glow"
               >
                 Yes, I Want More Qualified Leads
               </Button>

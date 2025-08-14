@@ -25,7 +25,7 @@ export const CTASection = ({ onGetStarted }: CTASectionProps) => {
           </p>
           
           <div className="grid md:grid-cols-4 gap-6 mb-12">
-            <Card className="bg-white/10 border-white/20 text-center">
+            <Card className="bg-white/10 border-white/20 text-center card-hover">
               <CardContent className="p-6">
                 <Clock className="h-8 w-8 mx-auto mb-3 text-white" />
                 <div className="text-2xl font-bold text-white">60 Sec</div>
@@ -33,7 +33,7 @@ export const CTASection = ({ onGetStarted }: CTASectionProps) => {
               </CardContent>
             </Card>
             
-            <Card className="bg-white/10 border-white/20 text-center">
+            <Card className="bg-white/10 border-white/20 text-center card-hover">
               <CardContent className="p-6">
                 <Users className="h-8 w-8 mx-auto mb-3 text-white" />
                 <div className="text-2xl font-bold text-white">5+ Leads</div>
@@ -41,7 +41,7 @@ export const CTASection = ({ onGetStarted }: CTASectionProps) => {
               </CardContent>
             </Card>
             
-            <Card className="bg-white/10 border-white/20 text-center">
+            <Card className="bg-white/10 border-white/20 text-center card-hover">
               <CardContent className="p-6">
                 <TrendingUp className="h-8 w-8 mx-auto mb-3 text-white" />
                 <div className="text-2xl font-bold text-white">24/7</div>
@@ -49,7 +49,7 @@ export const CTASection = ({ onGetStarted }: CTASectionProps) => {
               </CardContent>
             </Card>
             
-            <Card className="bg-white/10 border-white/20 text-center">
+            <Card className="bg-white/10 border-white/20 text-center card-hover">
               <CardContent className="p-6">
                 <Shield className="h-8 w-8 mx-auto mb-3 text-white" />
                 <div className="text-2xl font-bold text-white">$0</div>
@@ -58,7 +58,7 @@ export const CTASection = ({ onGetStarted }: CTASectionProps) => {
             </Card>
           </div>
           
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8">
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8 shadow-elevated glow-turquoise">
             <h3 className="text-2xl font-bold mb-4">Remember Our Guarantee</h3>
             <p className="text-lg text-primary-foreground/90 mb-6">
               We'll set up your system for free. If it doesn't get you at least 5 new qualified leads in 30 days, 
@@ -69,7 +69,7 @@ export const CTASection = ({ onGetStarted }: CTASectionProps) => {
               size="lg" 
               variant="secondary"
               onClick={onGetStarted}
-              className="bg-white text-primary hover:bg-primary-foreground/90 px-12 py-4 text-lg font-semibold"
+              className="bg-white text-primary hover:bg-primary-foreground/90 px-12 py-4 text-lg font-semibold button-glow hover:scale-105 transition-transform duration-300"
             >
               Claim My Free Setup Now
             </Button>

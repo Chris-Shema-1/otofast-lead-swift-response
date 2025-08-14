@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Instagram, MessageSquare, Mail, Globe, Clock, CheckCircle } from "lucide-react";
+import servicesImage from "@/assets/services-image.jpg";
 
 export const ServicesSection = () => {
   const services = [
@@ -60,18 +61,25 @@ export const ServicesSection = () => {
             <h2 className="text-3xl lg:text-4xl font-bold mb-6">
               We Handle All Your Platforms at Once
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
               Instagram, TikTok, Telegram, Email, and Website — we monitor everything 
               so you never miss another qualified lead.
             </p>
+            <div className="max-w-2xl mx-auto">
+              <img 
+                src={servicesImage} 
+                alt="Customer service managing multiple platforms"
+                className="rounded-xl shadow-elevated w-full h-auto"
+              />
+            </div>
           </div>
           
           {/* Services Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
             {services.map((service, index) => (
-              <Card key={index} className="bg-white border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+              <Card key={index} className="bg-white border-border card-hover shadow-[0_4px_12px_-4px_hsl(var(--turquoise-500)_/_0.15)]">
                 <CardHeader className="text-center pb-4">
-                  <div className="bg-primary/10 p-3 rounded-lg w-fit mx-auto mb-4">
+                  <div className="bg-primary/10 p-3 rounded-lg w-fit mx-auto mb-4 hover:bg-primary/20 transition-colors duration-300">
                     <service.icon className="h-8 w-8 text-primary" />
                   </div>
                   <CardTitle className="text-xl">{service.title}</CardTitle>
@@ -92,7 +100,7 @@ export const ServicesSection = () => {
           </div>
           
           {/* Process */}
-          <div className="bg-white rounded-2xl p-8 lg:p-12">
+          <div className="bg-white rounded-2xl p-8 lg:p-12 shadow-elevated card-hover">
             <div className="text-center mb-12">
               <h3 className="text-2xl lg:text-3xl font-bold mb-4">
                 Our 3-Step Process
@@ -104,11 +112,11 @@ export const ServicesSection = () => {
             
             <div className="grid lg:grid-cols-3 gap-8">
               {process.map((step, index) => (
-                <div key={index} className="text-center">
-                  <div className="bg-primary/10 p-4 rounded-full w-16 h-16 mx-auto mb-6 flex items-center justify-center">
+                <div key={index} className="text-center group">
+                  <div className="bg-primary/10 p-4 rounded-full w-16 h-16 mx-auto mb-6 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
                     <step.icon className="h-8 w-8 text-primary" />
                   </div>
-                  <div className="bg-primary text-primary-foreground rounded-full w-8 h-8 mx-auto mb-4 flex items-center justify-center text-sm font-bold">
+                  <div className="bg-primary text-primary-foreground rounded-full w-8 h-8 mx-auto mb-4 flex items-center justify-center text-sm font-bold group-hover:scale-110 transition-transform duration-300">
                     {step.step}
                   </div>
                   <h4 className="text-xl font-semibold mb-3">{step.title}</h4>

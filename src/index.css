@@ -50,6 +50,9 @@ All colors MUST be HSL.
     /* Shadows */
     --shadow-turquoise: 0 10px 30px -10px hsl(var(--turquoise-500) / 0.3);
     --shadow-glow: 0 0 40px hsl(var(--turquoise-500) / 0.2);
+    --shadow-card: 0 4px 12px -4px hsl(var(--turquoise-500) / 0.15);
+    --shadow-card-hover: 0 8px 25px -8px hsl(var(--turquoise-500) / 0.25);
+    --shadow-elevated: 0 20px 40px -12px hsl(var(--turquoise-500) / 0.2);
 
     --radius: 0.5rem;
 
@@ -116,5 +119,27 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  /* Card hover effects */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-[0_8px_25px_-8px_hsl(var(--turquoise-500)_/_0.25)] hover:-translate-y-1;
+  }
+  
+  /* Turquoise glow effect */
+  .glow-turquoise {
+    @apply shadow-[0_0_40px_hsl(var(--turquoise-500)_/_0.2)];
+  }
+  
+  /* Elevated card shadow */
+  .shadow-elevated {
+    @apply shadow-[0_20px_40px_-12px_hsl(var(--turquoise-500)_/_0.2)];
+  }
+  
+  /* Button hover glow */
+  .button-glow {
+    @apply hover:shadow-[0_8px_25px_-8px_hsl(var(--turquoise-500)_/_0.4)] transition-all duration-300;
   }
 }
