@@ -16,7 +16,7 @@ export const LeadForm = () => {
   });
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.expectedResults || !formData.budget) {
       toast({
@@ -26,21 +26,54 @@ export const LeadForm = () => {
       return;
     }
     
-    // Here you would typically send the data to your backend
-    console.log("Form submitted:", formData);
-    toast({
-      title: "Thank you for your interest!",
-      description: "We'll get back to you within 24 hours to set up your lead response system.",
-    });
-    
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      whatsapp: "",
-      expectedResults: "",
-      budget: "",
-    });
+    try {
+      // Prepare data for n8n webhook
+      const webhookData = {
+        name: formData.name,
+        email: formData.email,
+        whatsapp: formData.whatsapp || null,
+        expectedResults: formData.expectedResults,
+        budget: formData.budget,
+        timestamp: new Date().toISOString(),
+        source: "lead-form"
+      };
+
+      // TODO: Replace with your actual n8n webhook URL
+      const webhookUrl = "YOUR_N8N_WEBHOOK_URL_HERE";
+      
+      const response = await fetch(webhookUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(webhookData),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Thank you for your interest!",
+          description: "We'll get back to you within 24 hours to set up your lead response system.",
+        });
+        
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          whatsapp: "",
+          expectedResults: "",
+          budget: "",
+        });
+      } else {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast({
+        title: "Submission failed",
+        description: "There was an error submitting your form. Please try again.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
