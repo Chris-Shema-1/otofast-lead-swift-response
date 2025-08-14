@@ -9,6 +9,7 @@ import { useToast } from "@/hooks/use-toast";
 export const LeadForm = () => {
   const [formData, setFormData] = useState({
     name: "",
+    Lastname: "",
     email: "",
     whatsapp: "",
     expectedResults: "",
@@ -18,7 +19,7 @@ export const LeadForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name || !formData.email || !formData.expectedResults || !formData.budget) {
+    if (!formData.name || !formData.Lastname || !formData.email || !formData.expectedResults || !formData.budget) {
       toast({
         title: "Please fill in all required fields",
         variant: "destructive",
