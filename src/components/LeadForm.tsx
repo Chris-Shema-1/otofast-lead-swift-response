@@ -30,6 +30,7 @@ export const LeadForm = () => {
       // Prepare data for n8n webhook
       const webhookData = {
         name: formData.name,
+        Lastname: formData.Lastname,
         email: formData.email,
         whatsapp: formData.whatsapp || null,
         expectedResults: formData.expectedResults,
@@ -51,12 +52,13 @@ export const LeadForm = () => {
       if (response.ok) {
         toast({
           title: "Thank you for your interest!",
-          description: "We'll get back to you within 24 hours to set up your lead response system.",
+          description: "We'll get back to you within 24 minutes to set up your lead response system.",
         });
         
         // Reset form
         setFormData({
           name: "",
+          Lastname: "",
           email: "",
           whatsapp: "",
           expectedResults: "",
@@ -86,13 +88,24 @@ export const LeadForm = () => {
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="name">Full Name *</Label>
+            <Label htmlFor="name">FIrst Name *</Label>
             <Input
               id="name"
               type="text"
-              placeholder="Enter your full name"
+              placeholder="Enter your first name"
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+              required
+            />
+          </div>
+           <div className="space-y-2">
+            <Label htmlFor="Lastname">Last Name *</Label>
+            <Input
+              id="name"
+              type="text"
+              placeholder="Enter your Last name"
+              value={formData.Lastname}
+              onChange={(e) => setFormData({ ...formData, Lastname: e.target.value })}
               required
             />
           </div>
