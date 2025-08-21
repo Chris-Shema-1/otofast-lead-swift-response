@@ -21,8 +21,50 @@ export const Chatbot = ({ webhookUrl }: ChatbotProps) => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [chatId] = useState(() => crypto.randomUUID());
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const { toast } = useToast();
+
+  // Generate unique chat ID on component mount
+  const generateChatId = () => {
+    return `chat_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+  };
+
+  // Terminate chat session
+  const terminateSession = async () => {
+    if (webhookUrl && chatId) {
+      try {
+        await fetch(webhookUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "accept": "application/json",
+          },
+          body: JSON.stringify({
+            action: "terminate_session",
+            chatId: chatId,
+            timestamp: new Date().toISOString(),
+          }),
+        });
+      } catch (error) {
+        console.error("Error terminating session:", error);
+      }
+    }
+  };
+
+  // Handle tab close/beforeunload
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      terminateSession();
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+      terminateSession();
+    };
+  }, [chatId, webhookUrl]);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -70,8 +112,9 @@ export const Chatbot = ({ webhookUrl }: ChatbotProps) => {
           },
           body: JSON.stringify({
             message: inputValue,
+            chatId: chatId,
             timestamp: new Date().toISOString(),
-            userId: "anonymous",
+            userId: chatId,
           }),
         });
 
