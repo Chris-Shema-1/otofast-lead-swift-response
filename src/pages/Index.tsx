@@ -6,6 +6,7 @@ import { StorySection } from "@/components/StorySection";
 import { ServicesSection } from "@/components/ServicesSection";
 import { CTASection } from "@/components/CTASection";
 import { LeadForm } from "@/components/LeadForm";
+import { Chatbot } from "@/components/Chatbot";
 
 const Index = () => {
   const [showForm, setShowForm] = useState(false);
@@ -36,6 +37,8 @@ const Index = () => {
           </div>
         </section>
       )}
+      
+      <Chatbot />
     </div>
   );
 };
