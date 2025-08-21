@@ -38,7 +38,7 @@ const Index = () => {
         </section>
       )}
       
-      <Chatbot />
+      <Chatbot webhookUrl="https://n8n-b19k.onrender.com/webhook-test/59d29044-16f2-44e3-82e8-ec2925dfab61" />
     </div>
   );
 };
