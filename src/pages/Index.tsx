@@ -39,6 +39,12 @@ const Index = () => {
       )}
       
       <Chatbot webhookUrl="https://n8n-b19k.onrender.com/webhook-test/59d29044-16f2-44e3-82e8-ec2925dfab61" />
+      
+      {/* Vapi Voice Assistant Widget */}
+      <vapi-widget 
+        assistant-id="e3c582b5-2a47-4a3b-bab1-c776e3a21fd7" 
+        public-key="931e00fb-a51d-42bf-baef-76cad74ec255"
+      ></vapi-widget>
     </div>
   );
 };
