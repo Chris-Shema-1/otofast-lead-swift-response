@@ -40,7 +40,7 @@ export const LeadForm = () => {
         source: "lead-form"
       };
 
-      const webhookUrl = "https://n8n-b19k.onrender.com/webhook-test/594dad92-599c-4b40-8125-d995728bdf0e";
+      const webhookUrl = "https://afavirtuals.space/webhook/7fc5f461-0c4d-45cf-8ebf-04c8d57f402e";
       
       const response = await fetch(webhookUrl, {
         method: "POST",
